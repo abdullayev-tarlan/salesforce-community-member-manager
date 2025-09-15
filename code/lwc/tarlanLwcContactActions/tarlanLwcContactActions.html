@@ -1,0 +1,56 @@
+<template>
+	<template lwc:if={isCardVisible}>
+		<lightning-card title="tarlan Contact Actions">
+			<div class="slds-m-around_small">
+				<template lwc:if={isAcceptApplicationButtonVisible}>
+					<div class="slds-m-vertical_x-small">
+						<div class="tarlan-button-wrapper">
+							<lightning-button id="acceptApplicationBtn" label="Accept Application"
+								title="Accept Application" onclick={acceptApplicationHandler}
+								disabled={isAcceptApplicationButtonDisabled} variant="brand" class="tarlan-button"
+								stretch="true"></lightning-button>
+						</div>
+						<lightning-helptext content="Accept application by changing the status to 'Accepted'."
+							class="slds-m-horizontal_small"></lightning-helptext>
+					</div>
+				</template>
+				<template lwc:if={isRejectApplicationButtonVisible}>
+					<div class="slds-m-vertical_x-small">
+						<div class="tarlan-button-wrapper">
+							<lightning-button id="rejectApplicationBtn" label="Reject Application"
+								title="Reject Application" onclick={rejectApplicationHandler}
+								disabled={isRejectApplicationButtonDisabled} variant="brand" class="tarlan-button"
+								stretch="true"></lightning-button>
+						</div>
+						<lightning-helptext
+							content="Reject application by changing the status from 'Pending Initial Review' to 'Rejected'"
+							class="slds-m-horizontal_small"></lightning-helptext>
+					</div>
+				</template>
+				<template lwc:if={isRemoveButtonVisible}>
+					<div class="slds-m-vertical_x-small">
+						<div class="tarlan-button-wrapper">
+							<lightning-button id="removeBtn" label="Remove" title="Remove" onclick={removeHandler}
+								disabled={isRemoveButtonDisabled} variant="brand" class="tarlan-button"
+								stretch="true"></lightning-button>
+						</div>
+						<lightning-helptext
+							content="Removes contact from the network. It will take up to 30 minutes to sync with Magentrix."
+							class="slds-m-horizontal_small"></lightning-helptext>
+					</div>
+				</template>
+				<template lwc:if={isPromoteToUpperLevelButtonVisible}>
+					<div class="slds-m-vertical_x-small">
+						<div class="tarlan-button-wrapper">
+							<lightning-button id="promoteBtn" label="Promote Contributor" title="Promote Contributor"
+								onclick={promoteToUpperLevelHandler} disabled={isPromoteToUpperLevelButtonDisabled}
+								variant="brand" class="tarlan-button" stretch="true"></lightning-button>
+						</div>
+						<lightning-helptext content="Promotes contact."
+							class="slds-m-horizontal_small"></lightning-helptext>
+					</div>
+				</template>
+			</div>
+		</lightning-card>
+	</template>
+</template>

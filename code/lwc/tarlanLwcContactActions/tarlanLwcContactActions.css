@@ -1,0 +1,8 @@
+.tarlan-button {
+    --slds-c-button-brand-color-background: #17b9cf;
+}
+
+.tarlan-button-wrapper {
+    min-width: 200px;
+    display: inline-block;
+}
