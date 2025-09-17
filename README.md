@@ -164,7 +164,7 @@ Name: `VR_Contact_Valid_Accepted_Combination`
 Error Condition Formula:
 ```java
 /* Check if the custom setting is enabled FIRST */
-tarlan_custom_settings__c.getInstance().Enable_Validation_Rules__c
+$Setup.tarlan_custom_settings__c.Enable_Validation_Rules__c
 &&
 /* Then, check the original data condition */
 AND(

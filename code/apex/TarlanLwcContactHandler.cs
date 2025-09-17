@@ -2,15 +2,6 @@
 @SuppressWarnings('PMD.ApexCRUDViolation')
 public with sharing class TarlanLwcContactHandler {
 
-    //#region Helper methods
-
-    private static void sendEmail(String emailContent, String emailBody, String emailAddress) {
-        Logger.info('Sending email...');
-
-        // Send email logic here
-
-        Logger.info('Email has been sent successfully.');
-    }
 
     private static Contact getContactRecord(Id contactId) {
         Logger.info('Searching for contact record with Id: ' + contactId);
@@ -65,13 +56,11 @@ public with sharing class TarlanLwcContactHandler {
     private static void validatePromotableContact(Contact con) {
         Logger.info('Validating contact record ...');
 
-        // Check if the contact satisfies the criteria to be promoted to Principal Level
+        // Check if the contact satisfies the criteria to be promoted to Lead level
         List<String> validApprovalStatuses = new List<String>{
-            'Pending',
             'Accepted'
         };
         List<String> validLevels = new List<String>{
-            'Applicant',
             'Contributor',
             'Senior Contributor'
         };
