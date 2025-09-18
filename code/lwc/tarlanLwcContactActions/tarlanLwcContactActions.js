@@ -104,9 +104,7 @@ export default class tarlanLwcContactActions extends LightningElement {
 	// Fetch contact data
 	@wire(getRecord, { recordId: '$recordId', fields: CONTACT_FIELDS })
 	wiredContact({ data, error }) {
-		console.log("wired contact log");
 		if (data) {
-			console.log("inside if block log");
 			this.contactData = data.fields;
 			this.updateAcceptApplicationButtonState();
 			this.updateRejectApplicationButtonState();
